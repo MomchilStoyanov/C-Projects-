@@ -7,6 +7,7 @@ struct CDate
     int m_year;
     void print();
     void read();
+    void printam();
     int daysinmonth();
     bool isleapyear();
     void readam();
@@ -31,6 +32,13 @@ void CDate::print()
     cout<<m_day<<".";
     if(m_month<10)cout<<0;
     cout<<m_month<<"."<<m_year;
+}
+void CDate::printam()
+{
+     if(m_month<10) cout<<0;
+    cout<<m_month<<".";
+    if(m_day<10)cout<<0;
+    cout<<m_day<<"."<<m_year;
 }
 int CDate::daysinmonth()
 {
@@ -110,10 +118,11 @@ cin>>ch;
     switch(ch)
     {
         case 1: cout<<"dd.mm.yyyy"<<endl;d.read();
-        case 2: d1.print();
-        case 3: cout<<d.daysinmonth()<<endl;
-        case 4: cin>>b;d1=d.adddays(b);
-        case 5: d1.read();
+        case 2: d.print();
+        case 3:cout<<endl;cout<<"this month has "<<endl; cout<<d.daysinmonth()<<" day's!"<<endl;
+        case 4:cout<<"how many days do you want to add?"<<endl; cin>>b;d1=d.adddays(b); d1.print();
+        case 5:cout<<endl; cout<<"enter 2 dates to compare."<<endl;
+        d1.read();
         d2.read();
         if(d1.isbefore(d2))cout<<"before";
         else if(d1.isafter(d2))cout<<"after";
@@ -121,10 +130,11 @@ cin>>ch;
         case 6: break;
 
     case 7: cout<<"mm.dd.yyyy"<<endl; d.readam();
-    case 8: cout<<d.daysinmonth()<<endl;
-    case 9: cin>>b;d1=d.adddays(b);
-    case 10: d1.print();
-    case 11: d1.read();
+    case 8: d.printam();
+    case 9: cout<<endl;cout<<"this month has "<<d.daysinmonth()<<" day's"<<endl;
+    case 10: cout<<"how many days do you want to add?"<<endl; cin>>b;d1=d.adddays(b);d1.printam();
+    case 11:cout<<endl; cout<<"enter 2 dates to compare."<<endl;
+    d1.read();
     d2.read();
     if(d1.isbefore(d2))cout<<"before";
     else if(d1.isafter(d2))cout<<"after";
