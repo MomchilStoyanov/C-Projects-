@@ -24,7 +24,6 @@ void CDate::readam()
 {
     cin>>m_month>>m_day>>m_year;
 }
-
 void CDate::print()
 {
     if(m_day<10) cout<<0;
@@ -99,39 +98,34 @@ bool CDate::isafter(CDate d)
 int main ()
 {
     CDate d,d1,d2;
-    cout<<"1. Normal mode"<<endl;
-    cout<<"7. American mode"<<endl;
+   /* cout<<"1. Normal mode"<<endl;
+    cout<<"2. American mode"<<endl;
+    cout<<"3. How many days are in this month"<<endl;
+    cout<<"4. Print"<<endl;
     cout<<"0. Exit"<<endl;
-int ch; int b;
-cin>>ch;
-//while(b!=9)
-//{
-    //cin>>b;
+int ch*/int b;
+//cin>>ch;
+/*while(b!=9)
+{
+    cin>>b;
     switch(ch)
-    {
-        case 1: cout<<"dd.mm.yyyy"<<endl;d.read();
-        case 2: d1.print();
-        case 3: cout<<d.daysinmonth()<<endl;
-        case 4: cin>>b;d1=d.adddays(b);
-        case 5: d1.read();
-        d2.read();
-        if(d1.isbefore(d2))cout<<"before";
-        else if(d1.isafter(d2))cout<<"after";
-        else cout<<"equal";
-        case 6: break;
+    {*/
+        /*case 1: */cout<<"dd.mm.yyyy"<<endl;d.read();
+        cin>>b;
+    /*case 2: cout<<"mm.dd.yyyy"<<endl; d.readam();
+    /*case 3: */cout<<d.daysinmonth()<<endl;
+    d1=d.adddays(b);
 
-    case 7: cout<<"mm.dd.yyyy"<<endl; d.readam();
-    case 8: cout<<d.daysinmonth()<<endl;
-    case 9: cin>>b;d1=d.adddays(b);
-    case 10: d1.print();
-    case 11: d1.read();
-    d2.read();
-    if(d1.isbefore(d2))cout<<"before";
-    else if(d1.isafter(d2))cout<<"after";
-    else cout<<"equal";
-    case 0: break;
+    /*case 4: */d1.print();
+    /*case 0: break;
 
-    }
+    //}
 //}
+*/
+d1.read();
+d2.read();
+if(d1.isbefore(d2))cout<<"before";
+else if(d1.isafter(d2))cout<<"after";
+else cout<<"equal";
    return 0;
 }
